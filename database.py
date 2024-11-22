@@ -4,12 +4,13 @@ conn = sqlite3.connect('formula.db')
 
 cursor = conn.cursor()
 
-cursor.execute("SELECT * FROM thermodynamics;")
+cursor.execute("SELECT * FROM classicalPhysics;")
 
 rows = cursor.fetchall()
 
 for row in rows:
-    print(row)
+    for term in row:
+        print(term)
 
 
 
