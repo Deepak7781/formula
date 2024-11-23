@@ -9,7 +9,7 @@ conn = sqlite3.connect('formula.db')
 
 cursor = conn.cursor()
 
-cursor.execute("SELECT * FROM classicalPhysics;")
+cursor.execute("SELECT * FROM fluidMechanics;")
 
 rows = cursor.fetchall()
 
