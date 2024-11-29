@@ -57,7 +57,7 @@ def get_formula():
             if formula_desc.lower() == "all":  # Fetch all formulas
                 cursor.execute(f"SELECT name, formula, terms FROM {table_name}")
                 results = cursor.fetchall()
-                
+
                 if results:
                     display_text = "\n\n".join([f"Name: {row[0]}\nFormula: {row[1]}\nTerms: {row[2]}" for row in results])
                     formula_display_text.set("All formulas fetched. Ready for export.")
@@ -65,6 +65,7 @@ def get_formula():
                 else:
                     formula_display_text.set("No formulas found in this table.")
                     explanation_display_text.set("")
+        
             else:  # Fetch specific formula
                 cursor.execute(
                     f"SELECT formula, terms FROM {table_name} WHERE name = ?",
@@ -226,7 +227,5 @@ Label(right_frame, text=(
     "4. Ohm's Law: V = I × R\n\n"
     "5. Wave Equation: v = f × λ"
 ), font=content_font, fg="#4F4F4F", bg="skyblue", justify="left").pack(anchor="nw", pady=5)
-
-
 
 root.mainloop()
