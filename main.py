@@ -9,6 +9,8 @@ import sqlite3
 import random
 import re
 
+#setup
+
 root = Tk()
 root.tk.call('tk', 'scaling', 1.5)
 root.title("Formula")
